@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World'
+                archiveArtifacts artifacts: 'test.txt', fingerprint: true
+                cleanWs()
             }
         }
     }
